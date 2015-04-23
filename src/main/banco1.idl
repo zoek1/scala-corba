@@ -1,0 +1,21 @@
+module banco1 {
+  interface Datos {
+    void setNumCuenta(in long numC);
+    void setSaldo(in double cantidad);
+    void setNombre(in string nombre);
+
+    string getNombre();
+    long getNumCuenta();
+    double getSaldo();
+  };
+
+typedef sequence <Datos> sequenceDatos;
+
+  interface Banco  {
+    void crearCuenta(in Datos datos);
+    double depositar(in long numero, in double cantidad );
+    double retirar(in long numero, in double cantidad);
+    double consulta(in long num);
+    sequenceDatos verCuentas();
+  };
+};
